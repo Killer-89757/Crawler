@@ -8,8 +8,8 @@ def add_account():
     '''
     添加快手账号
     '''
-    id = request.json.get('id', '')
-    cookie = request.json.get('cookie', '')
+    id = request.form.get('id', '')
+    cookie = request.form.get('cookie', '')
     if id == '' or cookie == '':
         logger.error(f'id or cookie is empty, id: {id}, cookie: {cookie}')
         return reply(ErrorCode.PARAMETER_ERROR, "id and cookie is required")
